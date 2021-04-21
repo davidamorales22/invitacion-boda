@@ -48,7 +48,7 @@ export default function useController () {
       if (invitado) {
         await Api.frUpdate('invitados', invitado.id, { asistira: formik.values.asistira === 'SI' })
       }
-      MySwal.fire('', 'Gracias por confirmas tu asistencia, te esperamos el 13 de Marzo.', 'success')
+      MySwal.fire('', 'Gracias por confirmas tu asistencia, te esperamos el 15 de Mayo.', 'success')
       formik.resetForm()
     } catch (error) {
       MySwal.fire('ERROR', 'Ocurrio un error', 'error')

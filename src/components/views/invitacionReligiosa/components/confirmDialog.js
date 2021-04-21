@@ -68,8 +68,7 @@ const ConfirmDialog = ({ ctrl }) => {
             </Typography>
             <Typography align='justify' variant='body1'>
               {`
-                Nuestra recepción será al aire libre y estarán tomando todas las medidas de bioseguridad.
-                Recuerda mantener el distanciamiento social, llevar tu mascarilla, alcohol gel pero sobre todo ganas de disfrutar.
+                Estaremos tomando todas las medidas de bioseguridad. Recuerda mantener el distanciamiento físico, llevar tu mascarilla, alcohol gel pero sobre todo ganas de disfrutar.
               `}
             </Typography>
           </Box>
@@ -80,7 +79,7 @@ const ConfirmDialog = ({ ctrl }) => {
             fontWeight: 'bold'
           }}
           >
-              *Muestras de cariño en regalo de sobre.
+            {'*Agradecemos muestras de cariño en regalo de sobre'}
           </Typography>
         </DialogContent>
         <DialogActions>

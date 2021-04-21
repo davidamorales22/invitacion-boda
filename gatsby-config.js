@@ -33,6 +33,10 @@ module.exports = {
               variants: ['400']
             },
             {
+              family: 'Dancing Script',
+              variants: ['400']
+            },
+            {
               family: 'Oswald',
               variants: ['400']
             }
@@ -43,8 +47,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'DavidYLaura',
-        short_name: 'DavidYLaura',
+        name: 'EdgardYJensy',
+        short_name: 'EdgardYJensy',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#ffffff',
@@ -56,13 +60,13 @@ module.exports = {
       resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
-          apiKey: 'AIzaSyBbncx-fEkqwa2mVtCW_Z71pSZWEmkbTTs',
-          authDomain: 'invitacion-davidylaura.firebaseapp.com',
-          projectId: 'invitacion-davidylaura',
-          storageBucket: 'invitacion-davidylaura.appspot.com',
-          messagingSenderId: '358559684050',
-          appId: '1:358559684050:web:b503244601430f2e8d240b',
-          measurementId: 'G-E1V7HLV5MN'
+          apiKey: "AIzaSyA5sS_wJsHTPC_qXoZsjyjkZPWZuHsxTRA",
+          authDomain: "invitacion-jensy-garo.firebaseapp.com",
+          projectId: "invitacion-jensy-garo",
+          storageBucket: "invitacion-jensy-garo.appspot.com",
+          messagingSenderId: "684137438519",
+          appId: "1:684137438519:web:d55a98c2a78c708bf98eb2",
+          measurementId: "G-208Q0EPE3J"
         }
       }
     },

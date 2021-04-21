@@ -16,13 +16,12 @@ const location = () => {
         variant='h3'
         style={{
           borderBottom: '1px solid #d6a03d',
-          textTransform: 'uppercase',
           fontSize: '2.5rem',
           fontWeight: 'bold',
           color: '#424242'
         }}
       >
-            Sabado 13 de marzo del 2021
+            Sabado 15 de mayo del 2021
       </Typography>
       <Box height={16} />
       <Box maxWidth={600} margin='auto'>
@@ -31,20 +30,20 @@ const location = () => {
             icon={faChurch}
             size='5x'
             display='block'
-            color='#f57c00'
+            color='#125490'
           />
           <Typography align='center' variant='body2'>
                   Misa
           </Typography>
           <Typography align='center' variant='h2'>
-                  7:00 pm
+                  4:00 pm
           </Typography>
-          <Typography align='center' variant='h5'>
-                  Parroquia La Transfiguración
+          <Typography align='center' variant='h4'>
+            {'Parroquia Nuestra Señora de Guadalupe (Colonia Las Delicias, Santa Tecla)'}
           </Typography>
           <Box height={16} />
           <a
-            href='https://waze.com/ul?ll=13.6802778,-89.2255556&navigate=yes'
+            href='https://waze.com/ul?ll=13.67113984,-89.30049062&navigate=yes'
             target='_blank'
             style={{ textDecoration: 'none' }}
           >

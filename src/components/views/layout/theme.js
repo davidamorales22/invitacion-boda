@@ -20,16 +20,16 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
-    fontFamily: 'Poppins',
+    fontFamily: 'Dancing Script',
     h1: {
-      fontFamily: 'Great Vibes',
+      fontFamily: 'Dancing Script',
       fontWeight: '400'
     },
     h2: {
-      fontFamily: 'Oswald'
+      fontFamily: 'Dancing Script'
     },
     h4: {
-      fontFamily: 'Oswald'
+      fontFamily: 'Dancing Script'
     }
   },
   overrides: {

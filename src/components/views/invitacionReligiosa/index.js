@@ -27,7 +27,7 @@ const Hojas = loadable(() => import('./components/hojas'))
 const Location = loadable(() => import('./components/location'))
 const LocationParty = loadable(() => import('./components/locationParty'))
 
-const Invitacion = (props) => {
+const Invitacion = props => {
   const classes = useStyle()
   const ctrl = useController()
   const theme = useTheme()
@@ -36,16 +36,25 @@ const Invitacion = (props) => {
   const id = path[path.length - 1]
   const [invitado, setInvitado] = useState(null)
   const init = async () => {
-    const doc = await firebase.firestore().collection('invitados').doc(id).get()
-    if (doc.exists) {
-      setInvitado({ ...doc.data(), id: doc.id })
-    } else {
-      console.log('no existe')
-    }
+    try {
+      const doc = await firebase
+        .firestore()
+        .collection('invitados')
+        .doc(id)
+        .get()
+      if (doc.exists) {
+        setInvitado({ ...doc.data(), id: doc.id })
+      } else {
+        console.log('no existe')
+      }
+    } catch (error) {}
   }
-  useEffect(() => {
-    init()
-  }, [id])
+  useEffect(
+    () => {
+      init()
+    },
+    [id]
+  )
   return (
     <Container maxWidth='md' disableGutters style={{ textAlign: 'center' }}>
       <Hidden smDown>
@@ -57,43 +66,38 @@ const Invitacion = (props) => {
           responsive
           showSwipeHint
           uncutPages
-          orientation='horizontal'
-          // pageBackground='transparent'
+          orientation='horizontal' // pageBackground='transparent'
           animationDuration='400'
         >
           <article>
             <Container>
               <Hojas2 />
-              <Box
-                textAlign='center'
-                position='relative'
-              >
+              <Box textAlign='center' position='relative'>
                 <Typography
                   variant='h1'
                   align='center'
                   style={{
-                    fontSize: '5rem',
+                    fontSize: '7rem',
                     width: 300,
                     margin: 'auto',
                     lineHeight: '.3',
-                    // marginTop: isSm
-                    //   ? 'calc(50vh - 210px)'
-                    //   : 'calc(50vh - 300px)',
-                    paddingTop: isSm ? 'calc(50vh - 65px)' : 'calc(50vh - 165px)',
+                    paddingTop: isSm
+                      ? 'calc(50vh - 95px)'
+                      : 'calc(50vh - 165px)',
                     color: '#424242',
                     zIndex: 2
                   }}
                 >
-                  Laura
+                  Edgard
                 </Typography>
                 <Typography
                   variant='h1'
                   align='center'
                   style={{
-                    fontSize: '2rem',
+                    fontSize: '4rem',
                     width: 300,
                     margin: 'auto',
-                    lineHeight: '2.3',
+                    lineHeight: '2.5',
                     color: '#333',
                     zIndex: 2
                   }}
@@ -104,41 +108,41 @@ const Invitacion = (props) => {
                   variant='h1'
                   align='center'
                   style={{
-                    fontSize: '5rem',
+                    fontSize: '7rem',
                     width: 300,
                     margin: 'auto',
-                    lineHeight: '.5',
+                    lineHeight: '.2',
                     marginTop: 0,
                     color: '#424242',
                     zIndex: 2
                   }}
                 >
-                  David
+                  Jensy
                 </Typography>
               </Box>
             </Container>
           </article>
           <article>
             <Container>
-              <Hojas3 />
-              <Box height={120} />
-              {invitado && (
+              <Hojas2 />
+              <Box height={140} />
+              {invitado &&
                 <Typography
                   style={{
-                    fontSize: '2rem',
+                    fontSize: '2.5rem',
                     textAlign: 'justify',
                     position: 'relative',
                     fontWeight: 'bold',
-                    color: '#424242',
-                    borderBottom: '1px solid #333'
+                    padding: 8,
+                    color: 'white', // borderBottom: '1px solid #333',
+                    background: 'rgb(20 99 162)'
                   }}
                 >
                   {invitado.name}
-                </Typography>
-              )}
+                </Typography>}
               <Typography
                 style={{
-                  fontSize: '1.6rem',
+                  fontSize: '2rem',
                   position: 'relative',
                   color: '#424242',
                   textAlign: 'left',
@@ -148,8 +152,11 @@ const Invitacion = (props) => {
                 }}
               >
                 {
-                  'Tenemos el honor de invitarte a celebrar nuestra unión matrimonial, se llevará acabo el día... '
+                  'Con la bendición de nuestros padres, tenemos la dicha de celebrar nuestra unión en el sacramento del matrimonio y queremos que seas parte de él'
                 }
+                <br />
+                <br />
+                {'Se llevará a cabo el día….'}
               </Typography>
               <Typography
                 style={{
@@ -169,7 +176,7 @@ const Invitacion = (props) => {
           </article>
           <article>
             <Container>
-              <Hojas3 />
+              <Hojas2 />
               <Container disableGutters style={{ position: 'relative' }}>
                 <Box height={100} />
                 <Location />
@@ -178,7 +185,7 @@ const Invitacion = (props) => {
           </article>
           <article>
             <Container>
-              <Hojas3 />
+              <Hojas2 />
               <Container disableGutters style={{ position: 'relative' }}>
                 <Box height={40} />
                 <LocationParty invitado={invitado} />
@@ -186,7 +193,7 @@ const Invitacion = (props) => {
             </Container>
           </article>
           <article>
-            <Hojas3 />
+            <Hojas2 />
             <Box height={280} />
             <Button
               onClick={ctrl.handleOpen(invitado)}
@@ -197,8 +204,7 @@ const Invitacion = (props) => {
                 margin: 'auto',
                 color: 'white',
                 fontWeight: 'bold',
-                fontSize: '1.65rem',
-                textTransform: 'uppercase',
+                fontSize: '1.85rem',
                 background: colors.green[500],
                 borderRadius: 24,
                 boxShadow: '10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff'
@@ -218,15 +224,18 @@ const Invitacion = (props) => {
           </article>
           <article>
             <Foto1 />
-            <Typography style={{
-              position: 'absolute',
-              bottom: 80,
-              zIndex: 12,
-              color: 'white',
-              left: 0,
-              fontSize: '2rem',
-              fontWeight: 'bold'
-            }}
+            <Typography
+              style={{
+                position: 'absolute',
+                bottom: 80,
+                zIndex: 12,
+                color: 'white',
+                // left: 0,
+                fontSize: '3rem',
+                fontWeight: 'bold',
+                left: 'calc(50vw - 120px)'
+                // textShadow: '2px 2px 3px #000'
+              }}
             >
               ¡Te esperamos!
             </Typography>

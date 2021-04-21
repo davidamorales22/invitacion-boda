@@ -16,15 +16,16 @@ const LocationParty = ({ invitado }) => {
         align='left'
         variant='h3'
         style={{
-          fontSize: '1.35rem',
+          fontSize: '1.65rem',
           color: '#424242',
           fontWeight: 'bold',
           background: 'white',
           borderRadius: 8,
-          padding: 4
+          padding: 4,
+          marginTop: 80
         }}
       >
-          Nos gustaría que nos acompañes a celebrar
+          Acompañanos a nuestra recepción
       </Typography>
       <Box height={8} />
       <Box maxWidth={600} margin='auto'>
@@ -35,27 +36,24 @@ const LocationParty = ({ invitado }) => {
               icon={faGlassCheers}
               size='5x'
               display='block'
-              color='#f57c00'
+              color='#125490'
             />
           </Box>
-          <Typography align='center' variant='h4'>
-              8:30 PM
+          <Typography align='center' variant='h2'>
+              6:00 PM
           </Typography>
-          <Typography align='center' variant='h5'>
-              Hotel Barolo
+          <Typography align='center' variant='h4'>
+              Hacienda de Los Miranda, acceso sobre la calle Antigua Ferrocarril
           </Typography>
           <Divider />
           {invitado && (
             <Box>
-              <Typography style={{ color: '#f57c00', fontWeight: 'bold' }}>TE SENTARÁS EN</Typography>
-              <Typography style={{ fontSize: '2rem', fontWeight: 'bold', color: '#212121' }}>{`MESA ${invitado.table}`}</Typography>
-              <Divider />
-              <Typography style={{ color: '#f57c00', fontWeight: 'bold', marginTop: 16 }}>RESERVADO PARA</Typography>
-              <Typography style={{ fontSize: '2rem', fontWeight: 'bold', color: '#212121' }}>{`${invitado.count} PERSONAS`}</Typography>
+              <Typography style={{ fontSize: '2rem', fontWeight: 'bold', color: '#212121' }}>{`Hemos reservado ${invitado.count} espacios`}</Typography>
+              <Typography style={{ color: '#f57c00', fontWeight: 'bold', marginTop: 16 }}>Favor confirmar asistencia.</Typography>
             </Box>
           )}
           <a
-            href='https://waze.com/ul?ll=13.7089805,-89.2359586&navigate=yes'
+            href='https://waze.com/ul?ll=13.67828111,-89.24509764&navigate=yes'
             target='_blank'
             style={{ textDecoration: 'none' }}
           >

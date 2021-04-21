@@ -7,21 +7,14 @@ const Hojas2 = () => {
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   const images = useStaticQuery(graphql`
     query {
-      center: file(relativePath: { eq: "center.png" }) {
+      cornerUpLeft: file(relativePath: { eq: "jyg_top_left.png" }) {
         childImageSharp {
           fluid(maxWidth: 960, quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      cornerUpLeft: file(relativePath: { eq: "corner_up_left.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 960, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      cornerBottomRight: file(relativePath: { eq: "corner_down_right.png" }) {
+      cornerBottomRight: file(relativePath: { eq: "jyg_bottom_right.png" }) {
         childImageSharp {
           fluid(maxWidth: 960, quality: 90) {
             ...GatsbyImageSharpFluid
@@ -56,7 +49,7 @@ const Hojas2 = () => {
           zIndex: 0
         }}
       />
-      <Img
+      {/* <Img
         fluid={images.center.childImageSharp.fluid}
         style={{
           position: 'absolute',
@@ -65,7 +58,7 @@ const Hojas2 = () => {
           width: 380,
           zIndex: 0
         }}
-      />
+      /> */}
     </>
   )
 }
