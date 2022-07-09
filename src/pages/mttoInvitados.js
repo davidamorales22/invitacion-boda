@@ -4,5 +4,5 @@ import Seo from '../components/views/layout/seo'
 import Invitados from '../components/views/mtto'
 
 export default function Home (props) {
-  return <Layout><Seo title='¡NOS CASAMOS!' /><Invitados {...props} /></Layout>
+  return <Layout><Seo title='Mantenimiento' /><Invitados {...props} /></Layout>
 }

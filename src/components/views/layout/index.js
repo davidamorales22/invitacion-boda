@@ -1,11 +1,12 @@
-import { CssBaseline } from '@material-ui/core'
-import { ThemeProvider } from '@material-ui/core/styles'
-import { graphql, useStaticQuery } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
-import React from 'react'
-import useStyle from './style'
-import './style.css'
-import theme from './theme'
+import { CssBaseline } from "@material-ui/core"
+import { ThemeProvider } from "@material-ui/core/styles"
+import { graphql, useStaticQuery } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+import React from "react"
+import useStyle from "./style"
+import Snowfall from "react-snowfall"
+import "./style.css"
+import theme from "./theme"
 
 const MainLayout = props => {
   const classes = useStyle()
@@ -23,22 +24,14 @@ const MainLayout = props => {
     `
   )
   return (
-    <BackgroundImage
-      Tag='section'
-      fluid={data.desktop.childImageSharp.fluid}
-      backgroundColor='#fff'
-      style={{
-        backgroundRepeat: 'repeat',
-        backgroundSize: 'auto'
-      }}
-    >
-      <div className={classes.root}>
-        <CssBaseline />
-        <main>
-          {props.children}
-        </main>
-      </div>
-    </BackgroundImage>
+    <div className={classes.root}>
+      <CssBaseline />
+      <Snowfall
+        color="#7bc1ed"
+        snowflakeCount={100}
+      />
+      <main>{props.children}</main>
+    </div>
   )
 }
 

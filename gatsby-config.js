@@ -4,7 +4,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Invitacion',
-    description: 'Te invitamos a nuestra boda',
+    description: 'Baby Shower de Matias!',
     author: '@DavidMorales'
   },
   pathPrefix: `/${process.env.API_PATH_PREFIX}`,
@@ -24,6 +24,10 @@ module.exports = {
       options: {
         fonts: {
           google: [
+            {
+              family: 'Oswald',
+              variants: ['200', '400']
+            },
             {
               family: 'Poppins',
               variants: ['400', '700', '800']
@@ -47,26 +51,26 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'EdgardYJensy',
-        short_name: 'EdgardYJensy',
+        name: 'BabyShower',
+        short_name: 'BabyShower',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         display: 'minimal-ui',
-        icon: 'static/icon.png'
+        icon: 'static/images/matias/teddy.png'
       }
     },
     {
       resolve: 'gatsby-plugin-firebase',
       options: {
         credentials: {
-          apiKey: "AIzaSyA5sS_wJsHTPC_qXoZsjyjkZPWZuHsxTRA",
-          authDomain: "invitacion-jensy-garo.firebaseapp.com",
-          projectId: "invitacion-jensy-garo",
-          storageBucket: "invitacion-jensy-garo.appspot.com",
-          messagingSenderId: "684137438519",
-          appId: "1:684137438519:web:d55a98c2a78c708bf98eb2",
-          measurementId: "G-208Q0EPE3J"
+          apiKey: "AIzaSyD_way7K0AMLv-2b_Y3KoP3ntm4cK3Vl0E",
+          authDomain: "baby-shower-matias.firebaseapp.com",
+          projectId: "baby-shower-matias",
+          storageBucket: "baby-shower-matias.appspot.com",
+          messagingSenderId: "509540461295",
+          appId: "1:509540461295:web:12df2d2fe031e6f632891a",
+          measurementId: "G-RNEZE4Z8QL"
         }
       }
     },

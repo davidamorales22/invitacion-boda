@@ -106,14 +106,14 @@ const Invitados = () => {
             field: 'count',
             type: 'number'
           },
-          {
-            title: 'Mesa',
-            field: 'table',
-            type: 'number',
-            defaultGroupOrder: 0,
-            defaultSort: 'asc',
-            customSort: (a, b) => Number(a) - Number(b)
-          },
+          // {
+          //   title: 'Mesa',
+          //   field: 'table',
+          //   type: 'number',
+          //   defaultGroupOrder: 0,
+          //   defaultSort: 'asc',
+          //   customSort: (a, b) => Number(a) - Number(b)
+          // },
           {
             title: 'Asistira',
             field: 'asistira',

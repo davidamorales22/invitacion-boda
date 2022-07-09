@@ -6,7 +6,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: colors.green[500]
+      main: colors.deepPurple[500]
     },
     secondary: {
       main: '#212121'
@@ -20,7 +20,7 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
-    fontFamily: 'Dancing Script',
+    fontFamily: 'Oswald',
     h1: {
       fontFamily: 'Dancing Script',
       fontWeight: '400'
